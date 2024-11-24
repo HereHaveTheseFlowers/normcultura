@@ -10,10 +10,6 @@
     "typegen": "npx sanity extract --path=./sanity/extract.json && npx sanity@latest typegen generate"
   },
   "packageManager": "npm@10.5.2",
-  "overrides": {
-    "react": "$react",
-    "react-dom": "$react-dom"
-  },
   "dependencies": {
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.64.2",
