@@ -1,0 +1,7 @@
+.grid-button {
+  display: flex;
+  justify-content: flex-end;
+  line-height: 4.5vw !important; /* 65px on 1440 screen ;  */
+  font-size: 4.7vw !important; /* 68px on 1440 screen ;  */
+  white-space: nowrap;
+}

@@ -1,0 +1,72 @@
+.grid {
+  z-index: -10;
+  position: absolute;
+  max-width: 100% !important;
+  padding: 0 !important;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  opacity: var(--grid-opacity);
+  transition: opacity 0.2s ease-in-out;
+}
+
+.grid__wrapper {
+  height: 100%;
+  min-height: 100vh;
+  flex: 1 1 50%;
+  margin: 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: hidden;
+}
+
+.grid__column {
+  flex: 0 0 auto;
+  width: 8.33333333%;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  max-width: 100%;
+  padding: 0 8px;
+  /*   padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5); */
+  margin-top: var(--bs-gutter-y);
+  position: relative;
+  overflow-y: hidden;
+}
+
+@media (max-width: 960px) {
+  .grid__column:nth-child(n + 9) {
+    display: none;
+  }
+  .grid__column {
+    width: 12.5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid__column:nth-child(n + 5) {
+    display: none;
+  }
+  .grid__column {
+    width: 25%;
+  }
+}
+
+/* 
+  .grid__wrapper {
+    background-size: 112 10;
+    background-repeat: round;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='grid__svg'%3E%3Cdefs%3E%3Cpattern id='bg' patternUnits='userSpaceOnUse' width='112' height='10' %3E%3Ccircle fill='%23000000' cx='8' cy='2' r='1' /%3E%3Ccircle fill='%23000000' cx='102' cy='2' r='1' /%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23bg)' /%3E%3C/svg%3E");
+    height: 100%;
+    flex: 1 1 50%;
+    margin: 0 48px;
+  }
+  
+   */
+.grid__svg {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

@@ -1,0 +1,34 @@
+.list {
+  width: 100%;
+  height: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: calc(8px + 0.54vw); /* 16px; on 1440px */
+  font-style: normal;
+  line-height: normal;
+  font-weight: 400;
+}
+
+.list__table {
+  width: 100%;
+  border: none;
+}
+
+.list__tr {
+  margin: 8px 0 0 0;
+  position: relative;
+}
+
+.list__span {
+  padding-left: 8px;
+  display: inline-block;
+}
+
+.list__position {
+  width: 32px;
+  left: -22px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}

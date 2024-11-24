@@ -1,0 +1,49 @@
+.logo {
+  height: 100%;
+}
+
+.logo__wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.logo__svg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
+.logo__svg-text {
+  cursor: pointer;
+  width: 100%;
+}
+
+.logo__svg-copy {
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.logo__copy-button {
+  width: calc(9% - 5px + 2.3vw);
+  height: calc(5% - 5px + 3.3vw);
+  position: absolute;
+  top: calc(58% - 10px + 4.2vw);
+  left: calc(61% - 20px + 1.2vw);
+  z-index: 60;
+}
+
+.logo__logo-button {
+  width: 100%;
+  height: 100%;
+  position: absolute !important;
+  z-index: 50;
+  top: 0;
+  left: 0;
+}
+
+@media (max-width: 960px) {
+  .logo__copy-button {
+    width: calc(13% - 5px + 1.4vw);
+  }
+}
