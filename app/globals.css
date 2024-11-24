@@ -25,15 +25,13 @@ svg {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 a {
   color: var(--foreground);
   text-decoration: none;
+}
+
+html {
+  --grid-opacity: 0.5;
 }
 
 body {
@@ -43,6 +41,9 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 main {
