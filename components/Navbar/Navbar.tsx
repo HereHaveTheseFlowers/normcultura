@@ -4,7 +4,10 @@ import Arrow from "../Arrow/Arrow";
 import GridButton from "../GridButton/GridButton";
 import Action from "../Action/Action";
 
-const Navbar = async () => {
+type NavbarProps = { pagePath: string };
+
+const Navbar = async (props: NavbarProps) => {
+  const pagePath = props.pagePath;
   return (
     <header className="header">
       <nav className="header__nav row">
@@ -15,11 +18,17 @@ const Navbar = async () => {
               <Arrow className="header__arrow" />
             </div>
             <div className="col-11 header__menu">
-              <Action href="/" className="header__link header__link_selected">
+              <Action
+                href="/"
+                className={`header__link ${pagePath.includes("info") ? "" : "header__link_selected"}`}
+              >
                 WORKS
               </Action>
               <div>/</div>
-              <Action href="/info" className="header__link">
+              <Action
+                href="/info"
+                className={`header__link ${pagePath.includes("info") ? "header__link_selected" : ""}`}
+              >
                 INFO
               </Action>
             </div>
@@ -28,13 +37,16 @@ const Navbar = async () => {
             <div className="col-8 header__menu">
               <Action
                 href="/list"
-                className="header__link header__link_selected"
+                className={`header__link ${pagePath.includes("list") ? "header__link_selected" : ""}`}
               >
                 LIST
               </Action>
 
               <div>/</div>
-              <Action href="/" className="header__link">
+              <Action
+                href="/"
+                className={`header__link ${pagePath.includes("list") || pagePath.includes("info") ? "" : "header__link_selected"}`}
+              >
                 FEED
               </Action>
             </div>

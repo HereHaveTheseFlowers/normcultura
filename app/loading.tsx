@@ -6,7 +6,7 @@ const Loading = () => {
   return (
     <main>
       <Grid />
-      <Navbar />
+      <Navbar pagePath="works" />
     </main>
   );
 };

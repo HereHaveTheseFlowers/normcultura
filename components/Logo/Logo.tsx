@@ -1,14 +1,10 @@
 "use client";
-
 import React from "react";
 import Action from "../Action/Action";
 
 function Logo() {
-  const handleClickLogo = () => {
-    console.log("Logo clicked!");
-  };
-  const handleClickCopy = () => {
-    console.log("Copy clicked!");
+  const handleOnClickCopy = () => {
+    navigator.clipboard.writeText("hello@normcultura.com");
   };
   return (
     <div className="logo col-3">
@@ -19,7 +15,6 @@ function Logo() {
           preserveAspectRatio="xMinYMin"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 320 268"
-          onClick={handleClickLogo}
         >
           <path
             fillRule="evenodd"
@@ -88,7 +83,7 @@ function Logo() {
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMinYMin"
           viewBox="0 0 320 268"
-          style={{ pointerEvents: "none", width: "100%" }}
+          style={{ width: "100%" }}
         >
           <path
             className="logo__svg-copy"
@@ -96,7 +91,6 @@ function Logo() {
             stroke="#000"
             strokeWidth="4"
             d="M207.68 214h38.82v38.82h-38.82z"
-            onClick={handleClickCopy}
           />
           <path
             className="logo__svg-copy"
@@ -104,11 +98,10 @@ function Logo() {
             stroke="#000"
             strokeWidth="4"
             d="M194.5 227.18h38.82V266H194.5z"
-            onClick={handleClickCopy}
           />
         </svg>
-        <Action className="logo__logo-button" />
-        <Action className="logo__copy-button" />
+        <Action className="logo__logo-button" href="/" />
+        <Action className="logo__copy-button" onClick={handleOnClickCopy} />
       </div>
     </div>
   );
