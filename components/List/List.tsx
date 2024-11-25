@@ -1,11 +1,13 @@
 import React from "react";
 import "./styles.css";
-import { Project } from "@/sanity/types";
 import Action from "../Action/Action";
-type ListProps = { projects: Project[] };
+import { client } from "@/sanity/lib/client";
+import { PROJECTS_QUERY } from "@/sanity/lib/queries";
+import { Project } from "@/sanity/types";
+export const revalidate = 60; // invalidate every hour
 
-function List(props: ListProps) {
-  const projects = props.projects;
+async function List() {
+  const projects: Project[] = await client.fetch(PROJECTS_QUERY);
   return (
     <div className="list">
       <table className="list__table" border={0} cellPadding={0} cellSpacing={0}>
