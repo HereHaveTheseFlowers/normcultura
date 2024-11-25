@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { cookies } from "next/headers";
 
 const ABCCameraPlainVariable = localFont({
   src: [
@@ -23,13 +24,16 @@ export const metadata: Metadata = {
   description: "WIP",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const theme = cookieStore.get("theme");
+
   return (
-    <html lang="en">
+    <html lang="en" data-theme={theme}>
       <body className={`${ABCCameraPlainVariable.variable} antialiased`}>
         {children}
       </body>
