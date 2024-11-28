@@ -26,7 +26,7 @@ const Navbar = async (props: NavbarProps) => {
               </Action>
               <div>/</div>
               <Action
-                href="/info"
+                href="/info/about"
                 className={`header__link ${pagePath.includes("info") ? "header__link_selected" : ""}`}
               >
                 INFO

@@ -55,7 +55,7 @@ function Action(props: ActionProps) {
       <a
         {...rest}
         ref={actionRef as React.RefObject<HTMLAnchorElement>}
-        className={`anchor ${hoverActive ? "action_hover" : ""} ${props.className}`}
+        className={`anchor ${hoverActive ? "action_hover" : ""} ${props.className ? props.className : ""}`}
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
         onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -94,7 +94,7 @@ function Action(props: ActionProps) {
       <button
         {...rest}
         ref={actionRef as React.RefObject<HTMLButtonElement>}
-        className={`button ${hoverActive ? "action_hover" : ""} ${props.className}`}
+        className={`button ${hoverActive ? "action_hover" : ""} ${props.className ? props.className : ""}`}
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
         onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
