@@ -15,11 +15,7 @@ function TeamPage() {
         <TextList.Field>evgenii lomov</TextList.Field>
         <TextList.Field>Andrew ivanov</TextList.Field>
         <TextList.Field>daniel feldman</TextList.Field>
-        <TextList.Field>
-          <Action href="https://herehavetheseflowers.tech" target="_blank">
-            herehavetheseflowers
-          </Action>
-        </TextList.Field>
+        <TextList.Field>herehavetheseflowers</TextList.Field>
       </TextList>
     </>
   );
