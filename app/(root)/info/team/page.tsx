@@ -1,4 +1,3 @@
-import Action from "@/components/Action/Action";
 import InfoBar from "@/components/InfoBar/InfoBar";
 import Navbar from "@/components/Navbar/Navbar";
 import TextList from "@/components/TextList/TextList";
