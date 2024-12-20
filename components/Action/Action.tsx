@@ -54,6 +54,7 @@ function Action(props: ActionProps) {
     return (
       <a
         {...rest}
+        draggable="false"
         ref={actionRef as React.RefObject<HTMLAnchorElement>}
         className={`anchor ${hoverActive ? "action_hover" : ""} ${props.className ? props.className : ""}`}
         onMouseEnter={handleOnMouseEnter}
