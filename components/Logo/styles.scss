@@ -1,5 +1,8 @@
 .logo {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .logo__wrapper {
@@ -30,20 +33,39 @@
   position: absolute;
   top: calc(58% - 10px + 4.2vw);
   left: calc(61% - 20px + 1.2vw);
-  z-index: 60;
+  z-index: 6;
 }
 
 .logo__logo-button {
   width: 100%;
   height: 100%;
   position: absolute !important;
-  z-index: 50;
+  z-index: 5;
   top: 0;
   left: 0;
 }
 
-@media (max-width: 960px) {
+@media (max-width: $tablet-breakpoint) {
   .logo__copy-button {
     width: calc(13% - 5px + 1.4vw);
+    height: calc(3% - 5px + 3.3vw);
+    top: calc(53% - 10px + 4.2vw);
+    left: calc(60% - 10px + 1.2vw);
   }
+  .logo__logo-button {
+    height: 17vw;
+  }
+}
+@media (max-width: $sm-breakpoint) {
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+  .logo__logo-button {
+    height: 100%;
+  }
+}
+
+.logo-sm-alternative {
+  height: 8.5vw;
 }

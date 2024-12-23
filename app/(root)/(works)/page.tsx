@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import TextList from "@/components/TextList/TextList";
 import imageAny from "@/public/anybrowser.png";
 import imageChess from "@/public/chess.png";
-import "./styles.css";
+import "./styles.scss";
 
 export default async function HomePage() {
   return (

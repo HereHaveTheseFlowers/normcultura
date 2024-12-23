@@ -1,23 +1,18 @@
 "use client";
 import React, { useState } from "react";
-import "./styles.css";
+import "./styles.scss";
 import Action from "../Action/Action";
-import { GRID_OPACITY_ACTIVE, GRID_OPACITY_DISABLED } from "@/app/variables";
 
 function GridButton() {
   const [gridOn, setGridOn] = useState(true);
 
   const handleOnGridChange = () => {
+    const gridElement = document.querySelector(".grid");
+    if (!gridElement) return;
     if (gridOn) {
-      document.documentElement.style.setProperty(
-        "--grid-opacity",
-        GRID_OPACITY_DISABLED,
-      );
+      gridElement.classList.remove("grid_active");
     } else {
-      document.documentElement.style.setProperty(
-        "--grid-opacity",
-        GRID_OPACITY_ACTIVE,
-      );
+      gridElement.classList.add("grid_active");
     }
     setGridOn((gridOn) => (gridOn = !gridOn));
   };

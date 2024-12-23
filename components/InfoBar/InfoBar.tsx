@@ -1,6 +1,6 @@
 import React from "react";
 import Action from "../Action/Action";
-import "./styles.css";
+import "./styles.scss";
 
 type InfoBarProps = { pagePath: string };
 

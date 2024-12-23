@@ -3,18 +3,24 @@ import Navbar from "@/components/Navbar/Navbar";
 import TextList from "@/components/TextList/TextList";
 import React from "react";
 
+const teamMembers = [
+  "masha sivers",
+  "polina ovchinnikova",
+  "evgenii lomov",
+  "Andrew ivanov",
+  "daniel feldman",
+  "herehavetheseflowers",
+];
+
 function TeamPage() {
   return (
     <>
       <Navbar pagePath="/info/team" />
       <InfoBar pagePath="/info/team" />
       <TextList>
-        <TextList.Field>masha sivers</TextList.Field>
-        <TextList.Field>polina ovchinnikova</TextList.Field>
-        <TextList.Field>evgenii lomov</TextList.Field>
-        <TextList.Field>Andrew ivanov</TextList.Field>
-        <TextList.Field>daniel feldman</TextList.Field>
-        <TextList.Field>herehavetheseflowers</TextList.Field>
+        {teamMembers.map((teamMember) => (
+          <TextList.Field key={teamMember}>{teamMember}</TextList.Field>
+        ))}
       </TextList>
     </>
   );

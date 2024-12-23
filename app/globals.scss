@@ -1,0 +1,104 @@
+@import "~bootstrap/dist/css/bootstrap-grid.min.css";
+@import "@/app/variables.scss";
+
+:root {
+  -webkit-font-smoothing: antialiased;
+}
+
+svg {
+  transform: translate3d(0, 0, 0);
+}
+/* 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000;
+    --foreground: #ededed;
+  }
+} */
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+a {
+  color: $foreground-color;
+  text-decoration: none;
+}
+
+body {
+  background: $background-color;
+  color: $foreground-color;
+  font-family: "ABCCameraPlainVariable";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  height: 100%;
+  position: relative;
+}
+
+table {
+  border-spacing: 0;
+}
+
+th,
+tr {
+  font-weight: 400;
+  text-align: left;
+}
+
+@mixin col($num) {
+  @media (max-width: $tablet-breakpoint) {
+    .col-tablet-#{$num} {
+      width: calc(12.5% * $num);
+    }
+  }
+  @media (max-width: $mobile-breakpoint) {
+    .col-mobile-#{$num} {
+      width: calc(12.5% * $num);
+    }
+  }
+}
+
+@include col(1);
+@include col(2);
+@include col(3);
+@include col(4);
+@include col(5);
+@include col(6);
+@include col(7);
+@include col(8);
+
+.mobile-only {
+  display: none !important;
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .mobile-hidden {
+    display: none !important;
+  }
+  .mobile-only {
+    display: inherit !important;
+  }
+}
+
+.sm-only {
+  display: none !important;
+}
+
+@media (max-width: $sm-breakpoint) {
+  .sm-hidden {
+    display: none !important;
+  }
+  .sm-only {
+    display: inherit !important;
+  }
+}

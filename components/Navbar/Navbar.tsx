@@ -3,6 +3,7 @@ import Logo from "../Logo/Logo";
 import Arrow from "../Arrow/Arrow";
 import GridButton from "../GridButton/GridButton";
 import Action from "../Action/Action";
+import "./styles.scss";
 
 type NavbarProps = { pagePath: string };
 
@@ -14,10 +15,10 @@ const Navbar = async (props: NavbarProps) => {
         <Logo />
         <div className="header__logo col-9">
           <div className="row header__row">
-            <div className="col-1 header__arrow-wrapper">
+            <div className="col-1 header__arrow-wrapper mobile-hidden">
               <Arrow className="header__arrow" />
             </div>
-            <div className="col-11 header__menu">
+            <div className="col-11  col-mobile-8 header__menu">
               <Action
                 href="/"
                 className={`header__link ${pagePath.includes("info") ? "" : "header__link_selected"}`}
@@ -34,7 +35,7 @@ const Navbar = async (props: NavbarProps) => {
             </div>
           </div>
           <div className="row header__row">
-            <div className="col-8 header__menu">
+            <div className="col-8 col-mobile-8 header__menu">
               <Action
                 href="/list"
                 className={`header__link ${pagePath.includes("list") ? "header__link_selected" : ""}`}
@@ -42,7 +43,7 @@ const Navbar = async (props: NavbarProps) => {
                 LIST
               </Action>
 
-              <div>/</div>
+              <div className="header__link">/</div>
               <Action
                 href="/"
                 className={`header__link ${pagePath.includes("list") || pagePath.includes("info") ? "" : "header__link_selected"}`}
@@ -50,7 +51,7 @@ const Navbar = async (props: NavbarProps) => {
                 FEED
               </Action>
             </div>
-            <div className="col-4">
+            <div className="col-4 mobile-hidden">
               <div className="header__info-wrapper">
                 <div className="header__info">© 2024</div>
                 <div className="header__grid-button">

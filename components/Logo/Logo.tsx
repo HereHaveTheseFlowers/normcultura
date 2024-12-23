@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import Action from "../Action/Action";
+import "./styles.scss";
+import Arrow from "../Arrow/Arrow";
 
 function Logo() {
   const handleOnClickCopy = () => {
@@ -8,7 +10,7 @@ function Logo() {
   };
   return (
     <div className="logo col-3">
-      <div className="logo__wrapper">
+      <div className="logo__wrapper  sm-hidden">
         <svg
           className="logo__svg logo__svg-text"
           fill="none"
@@ -102,6 +104,10 @@ function Logo() {
         </svg>
         <Action className="logo__logo-button" href="/" />
         <Action className="logo__copy-button" onClick={handleOnClickCopy} />
+      </div>
+      <div className="col-12 sm-only logo-sm-alternative">
+        <Action className="logo__logo-button" href="/" />
+        <Arrow className="" />
       </div>
     </div>
   );

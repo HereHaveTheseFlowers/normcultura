@@ -1,5 +1,7 @@
+@import "@/app/variables.scss";
+
 .grid {
-  z-index: -10;
+  z-index: -1;
   position: absolute;
   max-width: 100% !important;
   padding: 0 !important;
@@ -7,8 +9,12 @@
   left: 0;
   top: 0;
   bottom: 0;
-  opacity: var(--grid-opacity);
+  opacity: $grid-opacity-disabled;
   transition: opacity 0.2s ease-in-out;
+}
+
+.grid_active {
+  opacity: $grid-opacity-active;
 }
 
 .grid__wrapper {
@@ -28,14 +34,12 @@
   --bs-gutter-y: 0;
   max-width: 100%;
   padding: 0 8px;
-  /*   padding-right: calc(var(--bs-gutter-x) * 0.5);
-    padding-left: calc(var(--bs-gutter-x) * 0.5); */
   margin-top: var(--bs-gutter-y);
   position: relative;
   overflow-y: hidden;
 }
 
-@media (max-width: 960px) {
+@media (max-width: $tablet-breakpoint) {
   .grid__column:nth-child(n + 9) {
     display: none;
   }
@@ -44,12 +48,21 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: $mobile-breakpoint) {
   .grid__column:nth-child(n + 5) {
     display: none;
   }
   .grid__column {
     width: 25%;
+  }
+  .grid__wrapper {
+    margin: 0 $grid-margin-mobile;
+  }
+}
+
+@media (max-width: $sm-breakpoint) {
+  .grid__wrapper {
+    margin: 0 $grid-margin-sm;
   }
 }
 

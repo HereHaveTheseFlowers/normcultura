@@ -1,12 +1,14 @@
 "use server";
 import React from "react";
-import "./styles.css";
+import "./styles.scss";
+
+const numberOfCol = 12;
 
 function Grid() {
   return (
     <div className="grid grid_active">
       <div className="grid__wrapper">
-        {Array(12)
+        {Array(numberOfCol)
           .fill(0)
           .map((_, i) => (
             <div className="grid__column" key={i + 1}>

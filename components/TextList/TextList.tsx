@@ -1,8 +1,15 @@
 import React from "react";
-import "./styles.css";
+import "./styles.scss";
 
-function TextList({ children }: Readonly<{ children?: React.ReactNode }>) {
-  return <div className="text-list">{children}</div>;
+function TextList({
+  children,
+  className,
+}: Readonly<{ children?: React.ReactNode }> & { className?: string }) {
+  return (
+    <div className={`text-list${className ? " " + className : ""}`}>
+      {children}
+    </div>
+  );
 }
 
 TextList.Field = function Field(

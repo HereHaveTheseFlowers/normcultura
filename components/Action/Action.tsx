@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import "./styles.css";
+import "./styles.scss";
 
 type ActionProps = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -10,10 +10,10 @@ type ActionProps = React.DetailedHTMLProps<
     React.AnchorHTMLAttributes<HTMLAnchorElement>,
     HTMLAnchorElement
   > &
-  React.AriaAttributes;
+  React.AriaAttributes & { isMobile?: boolean };
 
 function Action(props: ActionProps) {
-  const { children, ...rest } = props;
+  const { children, isMobile, ...rest } = props;
   const [hoverActive, setHoverActive] = useState(false);
   const actionRef = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
   const [buttonDimensions, setButtonDimensions] = useState([0, 0]);
@@ -50,13 +50,38 @@ function Action(props: ActionProps) {
     setHoverActive(false);
     UpdateDimensions();
   };
+
+  const actionHoverElement = (
+    <>
+      <span
+        className={`action__hover-squares ${hoverActive || isMobile ? "action__hover-squares_hover" : ""}`}
+      />
+      <span
+        className={`action__hover-squares ${hoverActive || isMobile ? "action__hover-squares_hover" : ""}`}
+      />
+      <span
+        className={`action__hover-squares ${hoverActive || isMobile ? "action__hover-squares_hover" : ""}`}
+      />
+      <span
+        className={`action__hover-squares ${hoverActive || isMobile ? "action__hover-squares_hover" : ""}`}
+      />
+      <div
+        className={`action__hover-info ${!isMobile ? (hoverActive ? "action__hover-info_hover" : "") : ""}`}
+      >
+        <span className="action__hover-info-span">
+          {buttonDimensions[0]} X {buttonDimensions[1]}
+        </span>
+      </div>
+    </>
+  );
+
   if (props.href) {
     return (
       <a
         {...rest}
         draggable="false"
         ref={actionRef as React.RefObject<HTMLAnchorElement>}
-        className={`anchor ${hoverActive ? "action_hover" : ""} ${props.className ? props.className : ""}`}
+        className={`anchor ${hoverActive || isMobile ? "action_hover" : ""} ${props.className ? props.className : ""}`}
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
         onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -69,25 +94,7 @@ function Action(props: ActionProps) {
         }}
       >
         {children}
-        <span
-          className={`action__hover-squares ${hoverActive ? "action__hover-squares_hover" : ""}`}
-        />
-        <span
-          className={`action__hover-squares ${hoverActive ? "action__hover-squares_hover" : ""}`}
-        />
-        <span
-          className={`action__hover-squares ${hoverActive ? "action__hover-squares_hover" : ""}`}
-        />
-        <span
-          className={`action__hover-squares ${hoverActive ? "action__hover-squares_hover" : ""}`}
-        />
-        <div
-          className={`action__hover-info ${hoverActive ? "action__hover-info_hover" : ""}`}
-        >
-          <span className="action__hover-info-span">
-            {buttonDimensions[0]} X {buttonDimensions[1]}
-          </span>
-        </div>
+        {actionHoverElement}
       </a>
     );
   } else
@@ -95,7 +102,7 @@ function Action(props: ActionProps) {
       <button
         {...rest}
         ref={actionRef as React.RefObject<HTMLButtonElement>}
-        className={`button ${hoverActive ? "action_hover" : ""} ${props.className ? props.className : ""}`}
+        className={`button ${hoverActive || isMobile ? "action_hover" : ""} ${props.className ? props.className : ""}`}
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
         onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
@@ -108,25 +115,7 @@ function Action(props: ActionProps) {
         }}
       >
         {children}
-        <span
-          className={`action__hover-squares ${hoverActive ? "action__hover-squares_hover" : ""}`}
-        />
-        <span
-          className={`action__hover-squares ${hoverActive ? "action__hover-squares_hover" : ""}`}
-        />
-        <span
-          className={`action__hover-squares ${hoverActive ? "action__hover-squares_hover" : ""}`}
-        />
-        <span
-          className={`action__hover-squares ${hoverActive ? "action__hover-squares_hover" : ""}`}
-        />
-        <div
-          className={`action__hover-info ${hoverActive ? "action__hover-info_hover" : ""}`}
-        >
-          <span className="action__hover-info-span">
-            {buttonDimensions[0]} X {buttonDimensions[1]}
-          </span>
-        </div>
+        {actionHoverElement}
       </button>
     );
 }

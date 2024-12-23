@@ -1,0 +1,12 @@
+@import "@/app/variables.scss";
+
+.works__img {
+  width: 100%;
+  -webkit-user-drag: none;
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .works__img {
+    margin-top: $grid-margin-mobile;
+  }
+}

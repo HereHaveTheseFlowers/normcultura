@@ -1,3 +1,4 @@
+@import "@/app/variables.scss";
 .list {
   width: 100%;
   height: 100%;
@@ -31,4 +32,31 @@
   display: flex;
   justify-content: center;
   position: absolute;
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .list__span {
+    padding-left: 4px;
+  }
+  .list {
+    margin-top: $grid-margin-mobile;
+    padding-left: $grid-margin-mobile;
+    padding-right: $grid-margin-mobile;
+  }
+  .list__position {
+    left: -16px;
+  }
+}
+
+@media (max-width: $sm-breakpoint) {
+  .list__span {
+    padding-left: 4px;
+  }
+  .list {
+    padding-left: $grid-margin-sm;
+    padding-right: $grid-margin-sm;
+  }
+  .list__position {
+    left: -16px;
+  }
 }
