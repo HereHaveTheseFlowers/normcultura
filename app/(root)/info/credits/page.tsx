@@ -11,9 +11,7 @@ function CreditsPage() {
       <InfoBar pagePath="/info/credits" />
       <TextList>
         <TextList.Field>
-          font used: ABC camera plain
-          <br />
-          51pt by abc dinamo
+          font used: ABC camera plain 51pt by abc dinamo
         </TextList.Field>
         <TextList.Field>
           website designed by masha
