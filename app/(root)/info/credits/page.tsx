@@ -25,7 +25,11 @@ function CreditsPage() {
           <div style={{ display: "flex", flexDirection: "column" }}>
             website developed by
             <br />
-            <Action href="https://herehavetheseflowers.tech" target="_blank">
+            <Action
+              href="https://herehavetheseflowers.tech"
+              isMobile={true}
+              target="_blank"
+            >
               herehavetheseflowers
             </Action>
           </div>

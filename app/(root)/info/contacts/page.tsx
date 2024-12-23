@@ -12,17 +12,27 @@ function ContactsPage() {
       <TextList>
         <TextList.Field>
           dm us on{"\xa0"}
-          <Action href="https://www.instagram.com/normcultura" target="_blank">
+          <Action
+            href="https://www.instagram.com/normcultura"
+            isMobile={true}
+            target="_blank"
+          >
             instagram
           </Action>
         </TextList.Field>
         <TextList.Field>
           contact us through{"\xa0"}
-          <Action href="mailto:hello@normcultura.com">email</Action>
+          <Action href="mailto:hello@normcultura.com" isMobile={true}>
+            email
+          </Action>
         </TextList.Field>
         <TextList.Field>
           text us on{"\xa0"}
-          <Action href="https://t.me/normcultura" target="_blank">
+          <Action
+            href="https://t.me/normcultura"
+            target="_blank"
+            isMobile={true}
+          >
             telegram
           </Action>
         </TextList.Field>
