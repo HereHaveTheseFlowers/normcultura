@@ -25,7 +25,15 @@ function CreditsPage() {
             <br />
             <Action
               href="https://herehavetheseflowers.tech"
+              className="mobile-hidden"
+              target="_blank"
+            >
+              herehavetheseflowers
+            </Action>
+            <Action
+              href="https://herehavetheseflowers.tech"
               isMobile={true}
+              className="mobile-only"
               target="_blank"
             >
               herehavetheseflowers

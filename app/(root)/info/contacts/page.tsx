@@ -14,21 +14,43 @@ function ContactsPage() {
           dm us on{"\xa0"}
           <Action
             href="https://www.instagram.com/normcultura"
-            isMobile={true}
             target="_blank"
+            className="mobile-hidden"
           >
             instagram
+          </Action>
+          <Action
+            href="mailto:hello@normcultura.com"
+            isMobile={true}
+            className="mobile-only"
+          >
+            email
           </Action>
         </TextList.Field>
         <TextList.Field>
           contact us through{"\xa0"}
-          <Action href="mailto:hello@normcultura.com" isMobile={true}>
+          <Action href="mailto:hello@normcultura.com" className="mobile-hidden">
+            email
+          </Action>
+          <Action
+            href="mailto:hello@normcultura.com"
+            isMobile={true}
+            className="mobile-only"
+          >
             email
           </Action>
         </TextList.Field>
         <TextList.Field>
           text us on{"\xa0"}
           <Action
+            className="mobile-hidden"
+            href="https://t.me/normcultura"
+            target="_blank"
+          >
+            telegram
+          </Action>
+          <Action
+            className="mobile-only"
             href="https://t.me/normcultura"
             target="_blank"
             isMobile={true}
